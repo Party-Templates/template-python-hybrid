@@ -32,20 +32,65 @@ Un **template arquitectónico** que te permite crear aplicaciones Python que fun
 
 ## 🚀 Inicio Rápido
 
-### Instalación
+### 1. Instalación
 
 ```bash
 # Clonar el repositorio
 git clone https://github.com/Party-Templates/template-python-hybrid.git
 cd template-python-hybrid
-
-# Instalar dependencias
-pip install -r requirements.txt
 ```
 
-### Uso
+### 2. Configuración Inicial (RECOMENDADO) ⭐
+
+**¡NUEVO!** Usa el configurador interactivo para adaptar el template a tus necesidades:
 
 ```bash
+python setup.py
+```
+
+El script te guiará paso a paso para:
+- 📚 **Elegir el tipo de lógica**: Unificada (simple) o Separada (profesional)
+- 🎨 **Elegir el tipo de interfaz**: Híbrida (CLI+GUI), Solo GUI o Solo CLI
+- 🧹 **Limpiar automáticamente** los archivos que no necesitas
+
+**Ventajas del configurador:**
+- ✅ Template adaptado exactamente a tus necesidades
+- ✅ Elimina código y archivos innecesarios
+- ✅ Explicaciones detalladas de cada opción
+- ✅ Recomendaciones según tu tipo de proyecto
+- ✅ Configuración lista para desarrollo en minutos
+
+### 3. Instalación de Dependencias
+
+```bash
+# Si elegiste interfaz con GUI (Híbrida o Solo GUI)
+pip install -r requirements.txt
+
+# Si elegiste Solo CLI, no necesitas dependencias adicionales
+```
+
+### 4. Uso
+
+Dependiendo de tu configuración:
+
+```bash
+# Si elegiste Lógica Unificada:
+python main.py              # GUI (si es híbrida o solo GUI)
+python main.py --cli        # CLI (si es híbrida)
+
+# Si elegiste Lógica Separada:
+python launcher.py          # GUI (si es híbrida o solo GUI)
+python launcher.py --cli    # CLI (si es híbrida)
+```
+
+### Uso sin Configurador (Modo Tradicional)
+
+Si prefieres explorar el template completo sin configurar:
+
+```bash
+# Instalar dependencias
+pip install -r requirements.txt
+
 # Ejecutar en modo GUI (por defecto)
 python main.py
 # o
@@ -85,6 +130,68 @@ template-python-hybrid/
 │   └── config.json     # Configuraciones
 │
 └── requirements.txt    # Dependencias
+```
+
+---
+
+## 🎯 Configurador Interactivo `setup.py`
+
+### ¿Qué hace el configurador?
+
+El script `setup.py` es una herramienta interactiva que adapta el template a tus necesidades específicas mediante un proceso guiado de 3 pasos:
+
+#### 📚 Paso 1: Selección del Tipo de Lógica
+
+Elige entre:
+- **Lógica Unificada** (`main.py`): Todo en un archivo, ideal para prototipos
+- **Lógica Separada** (`launcher.py`): Modular y organizado, ideal para producción
+
+#### 🎨 Paso 2: Selección del Tipo de Interfaz
+
+Elige entre:
+- **Híbrida (CLI + GUI)**: Máxima flexibilidad
+- **Solo GUI**: Para usuarios finales
+- **Solo CLI**: Para automatización
+
+#### 🧹 Paso 3: Limpieza Automática
+
+El script elimina inteligentemente:
+- Archivos no necesarios según tu configuración
+- Código no utilizado de los archivos que mantiene
+- Dependencias que no necesitarás
+
+### Combinaciones Posibles
+
+El configurador soporta **6 combinaciones diferentes**:
+
+| Lógica | Interfaz | Archivos Finales | Ideal Para |
+|--------|----------|------------------|------------|
+| Unificada | Híbrida | `main.py` | Prototipos versátiles |
+| Unificada | Solo GUI | `main.py` | Apps de escritorio simples |
+| Unificada | Solo CLI | `main.py` | Scripts de automatización |
+| Separada | Híbrida | `launcher.py`, `ui/` | Proyectos profesionales versátiles |
+| Separada | Solo GUI | `launcher.py`, `ui/gui/` | Apps empresariales GUI |
+| Separada | Solo CLI | `launcher.py`, `ui/cli/` | Herramientas de servidor |
+
+### Ejemplo de Uso
+
+```bash
+$ python setup.py
+
+======================================================================
+         🐍 CONFIGURADOR INTERACTIVO - Python Hybrid Template          
+======================================================================
+
+¡Bienvenido!
+
+Este asistente te ayudará a configurar tu template Python Hybrid
+según tus necesidades específicas del proyecto.
+
+📋 Pasos del proceso:
+  1️⃣  Selección del tipo de lógica (Unificada o Separada)
+  2️⃣  Selección del tipo de interfaz (Híbrida, GUI o CLI)
+  3️⃣  Limpieza automática de archivos no necesarios
+...
 ```
 
 ---
