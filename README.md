@@ -48,6 +48,8 @@ cd template-python-hybrid
 python setup.py
 ```
 
+> 📖 **Para guía completa:** Ver [SETUP_GUIDE.md](SETUP_GUIDE.md)
+
 El script te guiará paso a paso para:
 - 📚 **Elegir el tipo de lógica**: Unificada (simple) o Separada (profesional)
 - 🎨 **Elegir el tipo de interfaz**: Híbrida (CLI+GUI), Solo GUI o Solo CLI
