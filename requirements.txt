@@ -1,0 +1,3 @@
+# Dependencias para interfaz gráfica (GUI)
+# Solo necesario si tu aplicación incluye GUI (PySide6, Tkinter, etc.)
+PySide6>=6.0.0
